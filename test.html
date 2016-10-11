@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			function RandomRange(min, max) {
+  				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
+			$(".btn").on("click",function(){
+				 $.getJSON("/quote.json", function(json) {
+//					var x =	json.val(0);
+					var x = RandomRange(0,58);
+					var quote = json[x].quote;
+					var author = json[x].author;
+
+
+					//var x = JSON.stringify(json);
+					 //var x = JSON.parse(json);
+//					 var htm = x;
+					 $(".text").html(quote);
+					 $(".author").html(author);
+				 });
+				 var colors = ['#558C89','#74AFAD','#D9853B','#ECECEA','#DE1B1B','#F6F6F6','#E9E581','#4A96AD','#F5F3EE','#FFFFFF','#E44424','#67BCDB','#A2AB58','#6DBDD6','#FFE658'];
+
+				 $(".quote").css("background-color",colors[RandomRange(0,14)]);
+				
+
+			});
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="quote"> 
+	<div class="text">
+You can do anything, but not everything.
+</div>
+<div class="author">
+David Allen
+</div>
+</div>
+<a class="btn btn-primary bt">Next</a>
+
+
+
+</body>
+</html>

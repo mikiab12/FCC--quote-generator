@@ -1,0 +1,31 @@
+body {
+	background-image: url("/img/2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.quote {
+	width: 50%;
+	height: 250px;	
+	margin: auto;
+	text-align: center;
+	margin-top: 15%;
+	font-size: 25px;
+	background-color: #558C89;
+	border-color: #C63D0F;
+	border-style: solid;
+	border-width:2px;
+	border-radius: 5px;
+	padding:10px;
+}
+.author {
+	text-align: right;
+}
+
+.well {
+	
+	color: #C63D0F;
+}
+.btn {
+	margin-bottom: 10px;
+	margin-left: 75%;
+}
